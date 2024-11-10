@@ -39,7 +39,7 @@ body {
 
 /* Shipping Info and Button */
 .shipping-info {
-  width: 97%;
+  width: 99%;
   display: flex;
   justify-content: space-between;
   margin: 30px 0px;
@@ -50,19 +50,30 @@ body {
   padding: 15px;
   background-color: #FF6B82;
   color: #fff;
-  border: none;
+
+  border:0;
+  border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-  font-weight: 600;
   margin: 0 0 1rem 0;
+
 }
 
 .add-to-cart-button:hover {
   background-color: #9e1429;
 }
 
+.cpytxt{
+  font-family: "Inter";
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  color: #70666666;
+
+}
+
 .copyright {
-  width: 97%;
+  width: 99%;
   text-align: right;
   margin-top: 10px;
   display: flex;
@@ -121,9 +132,11 @@ body {
   align-items: flex-end;
 }
 
-.radio-button {
+input.radio-button {
   margin: 1rem 10px 0 0;
+  accent-color:palevioletred;
 }
+
 
 /* Pair Text */
 .pair-text {
@@ -207,6 +220,53 @@ body {
 
 .drop-element {
   width: 100%;
+}
+
+/* Styling for the dropdown container */
+.dropdown {
+  position: relative;
+}
+
+/* Remove the default arrow and appearance */
+.drop-element {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 5px 10px 5px 10px;
+  border-radius: 5px;
+  background-color: #fff;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* Custom arrow styling using ::after */
+.dropdown:not(.no-arrow)::after {
+  content: "▼";  /* The down arrow character */
+  /* color: #333;*/  /*Arrow color */
+  font-size: 10px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* "Size" and "Colour" dropdowns to remove the arrow */
+.dropdown.no-arrow .drop-element {
+  -webkit-appearance: unset;
+  -moz-appearance: unset;
+  appearance: unset;
+}
+
+.dropdown.no-arrow .drop-element::after {
+  content: none;  /* Remove the arrow for these specific selects */
+}
+
+
+/* Focus effect on the select element */
+.drop-element:focus {
+  outline: none;
+  border-color: #007BFF;  /* Change border color on focus */
 }
 
 .selected .content-section {
